@@ -130,8 +130,11 @@ alias alec="allegro-cli"
 alias fsr="fig scripts refresh"
 alias kubxbatch="kubectx batch1.production.riskxint.com" 
 alias uuid="python3 -c 'import uuid; print(uuid.uuid4())' | tr -d \\\\n | pbcopy"
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 #source /opt/homebrew/opt/spaceship/spaceship.zsh
+
+source ~/.scripts/venv.sh
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/shai.ungar/.rd/bin:$PATH"
@@ -161,3 +164,4 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # CodeWhisperer post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
+
