@@ -1,0 +1,6 @@
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh/oh-my-zsh.sh"
+alias zshreload="source ~/.zshrc"
+alias cat="bat"
+alias buc="brew upgrade claude-code"
+alias c="claude"

@@ -1,0 +1,1 @@
+alias uuid="python3 -c 'import uuid; print(uuid.uuid4())' | tr -d \\\\n | pbcopy"

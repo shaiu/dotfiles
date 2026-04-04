@@ -1,0 +1,28 @@
+[user]
+	name = Shai Ungar
+	email = shai.ungar@gmail.com
+[includeIf "gitdir:~/git/"]
+	path = ~/.gitconfig.work
+[alias]
+	lg = log --pretty='%C(red)%h%Creset%C(yellow)%d%Creset %s %C(cyan)(%ar)%Creset'
+[core]
+	pager = delta
+    whitespace = trailing-space
+	autocrlf = input
+[push]
+	autoSetupRemote = true
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    side-by-side = true
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
