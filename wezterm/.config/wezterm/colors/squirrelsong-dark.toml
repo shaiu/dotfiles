@@ -1,0 +1,71 @@
+# Squirrelsong Dark Theme for WezTerm
+# https://sapegin.me/squirrelsong/
+
+[colors]
+foreground = '#bfac99'
+background = '#292019'
+
+cursor_bg = '#bfac99'
+cursor_fg = '#292019'
+cursor_border = '#bfac99'
+
+selection_fg = '#bfac99'
+selection_bg = '#574538'
+
+split = '#453327'
+
+visual_bell = "#ce574a"
+
+ansi = [
+  '#5b4839',
+  '#ac493e',
+  '#558240',
+  '#ceb250',
+  '#5993c2',
+  '#7f61b3',
+  '#4f9593',
+  '#bfac99',
+]
+
+brights = [
+  '#695444',
+  '#ce574a',
+  '#709855',
+  '#e2c358',
+  '#63a2d6',
+  '#9672d4',
+  '#72aaa8',
+  '#edd5be',
+]
+
+[colors.tab_bar]
+# Retro tab bar
+background = '#292019'
+# Fancy tab bar
+inactive_tab_edge = '#292019'
+
+[colors.tab_bar.active_tab]
+bg_color = '#4d3b2e'
+fg_color = '#bfac99'
+intensity = 'Bold'
+
+[colors.tab_bar.inactive_tab]
+bg_color = '#292019'
+fg_color = '#bfac99'
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = '#453327'
+fg_color = '#bfac99'
+
+[colors.tab_bar.new_tab]
+bg_color = '#292019'
+fg_color = '#bfac99'
+
+[colors.tab_bar.new_tab_hover]
+bg_color = '#453327'
+fg_color = '#bfac99'
+
+[metadata]
+aliases = []
+author = 'Artem Sapegin'
+name = 'Squirrelsong Dark'

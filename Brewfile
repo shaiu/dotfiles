@@ -1,3 +1,6 @@
+# Taps
+tap "nikitabobko/tap"
+
 # Terminal & Shell
 brew "zsh"
 brew "tmux"
@@ -47,7 +50,7 @@ brew "stern"         # multi-pod log tailing
 cask "wezterm"
 
 # Window management
-cask "aerospace"
+cask "nikitabobko/tap/aerospace"
 
 # Keyboard
 cask "karabiner-elements"

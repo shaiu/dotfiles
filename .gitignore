@@ -3,3 +3,4 @@
 *.zwc
 *.bak
 .env*
+Brewfile.lock.json

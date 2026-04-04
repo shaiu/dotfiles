@@ -67,7 +67,7 @@ done
 # Install Homebrew packages
 if [ -f "$DOTFILES_DIR/Brewfile" ]; then
   echo "==> Installing Homebrew packages from Brewfile..."
-  brew bundle --file="$DOTFILES_DIR/Brewfile" --no-lock 2>&1 | tail -5
+  brew bundle --file="$DOTFILES_DIR/Brewfile" 2>&1 | tail -5
 fi
 
 echo ""
