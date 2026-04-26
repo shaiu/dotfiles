@@ -158,7 +158,7 @@ export BAT_THEME=tokyonight_night
 
 # ---- Eza (better ls) -----
 
-alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user"
+alias ls="eza --color=always --long --git --no-filesize --icons=always --time-style=long-iso --no-user"
 
 # thefuck alias (deferred - saves ~200-400ms)
 zsh-defer eval "$(thefuck --alias)"
@@ -192,3 +192,5 @@ export PATH="$PATH:$HOME/.local/bin"
 
 # Source machine-local secrets and work-specific config (not in dotfiles repo)
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+export CLAUDE_CODE_NO_FLICKER=1

@@ -103,7 +103,7 @@ config.keys = {
 		key = "t",
 		mods = "CMD",
 		action = act.SpawnCommandInNewTab({
-			args = { "/opt/homebrew/bin/tmux", "new-session" },
+			args = { "/bin/zsh", "-lc", "exec /opt/homebrew/bin/tmux new-session" },
 		}),
 	},
 	{ key = "w", mods = "CMD", action = act.CloseCurrentTab({ confirm = true }) },
