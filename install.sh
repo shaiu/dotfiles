@@ -57,7 +57,7 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
 fi
 
 # Stow all packages (--adopt moves existing files into the repo)
-PACKAGES=(zsh git tmux nvim vim wezterm aerospace karabiner p10k ssh)
+PACKAGES=(zsh git tmux nvim vim wezterm herdr aerospace karabiner p10k ssh)
 echo "==> Stowing packages: ${PACKAGES[*]}"
 for pkg in "${PACKAGES[@]}"; do
   echo "    Stowing $pkg..."

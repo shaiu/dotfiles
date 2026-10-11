@@ -21,6 +21,7 @@ cd ~/dotfiles
 | `nvim` | Neovim config (Lua-based, lazy.nvim) |
 | `vim` | Vim config with vim-plug |
 | `wezterm` | WezTerm terminal emulator |
+| `herdr` | Herdr agent multiplexer (theme matched to WezTerm) |
 | `aerospace` | AeroSpace tiling window manager |
 | `karabiner` | Karabiner-Elements keyboard remapping |
 | `p10k` | Powerlevel10k prompt theme |

@@ -1,0 +1,44 @@
+onboarding = false
+
+[keys]
+prefix = "ctrl+b"
+next_agent = "prefix+a"
+previous_agent = "prefix+shift+a"
+
+[[keys.command]]
+key = "prefix+i"
+type = "plugin_action"
+command = "riskified.ignite.start-ticket"
+description = "Ignite: start ticket"
+
+[ui.toast]
+delivery = "terminal"
+
+[ui]
+show_agent_labels_on_pane_borders = true
+agent_panel_sort = "priority"
+hide_tab_bar_when_single_tab = true
+sidebar_width = 30
+accent = "#d4a36a"
+
+[theme]
+name = "terminal"
+auto_switch = false
+
+[theme.custom]
+panel_bg = "reset"
+accent = "#d4a36a"
+text = "#bfac99"
+subtext0 = "#a08d7a"
+overlay1 = "#94806d"
+overlay0 = "#7d6a59"
+surface0 = "#4d3b2e"
+surface1 = "#5b4839"
+surface_dim = "#42332a"
+mauve = "#9672d4"
+green = "#709855"
+yellow = "#e2c358"
+red = "#ce574a"
+blue = "#63a2d6"
+teal = "#72aaa8"
+peach = "#cf8a5a"
