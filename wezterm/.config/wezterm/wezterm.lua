@@ -15,6 +15,26 @@ config.font_size = 16
 config.line_height = 1.15
 config.window_padding = { left = 14, right = 14, top = 10, bottom = 6 }
 
+local low_dpi_font_overrides = {
+	font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Medium" }),
+	font_size = 19,
+	cell_width = 0.95,
+	freetype_load_target = "Light",
+}
+
+wezterm.on("update-status", function(window)
+	local is_low_dpi = window:get_dimensions().dpi < 100
+	local overrides = window:get_config_overrides() or {}
+	local wanted_font_size = is_low_dpi and low_dpi_font_overrides.font_size or nil
+	if overrides.font_size == wanted_font_size then
+		return
+	end
+	for key, value in pairs(low_dpi_font_overrides) do
+		overrides[key] = is_low_dpi and value or nil
+	end
+	window:set_config_overrides(overrides)
+end)
+
 -- Colors
 config.color_scheme = "Squirrelsong Dark"
 config.window_frame = {
