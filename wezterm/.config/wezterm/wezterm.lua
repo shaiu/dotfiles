@@ -100,14 +100,8 @@ end)
 
 -- Keybindings (Cmd-based, no conflict with tmux Ctrl+A prefix)
 config.keys = {
-	-- Tabs (each new tab opens a tmux session)
-	{
-		key = "t",
-		mods = "CMD",
-		action = act.SpawnCommandInNewTab({
-			args = { "/bin/zsh", "-lc", "exec /opt/homebrew/bin/tmux new-session" },
-		}),
-	},
+	-- Tabs
+	{ key = "t", mods = "CMD", action = act.SpawnTab("CurrentPaneDomain") },
 	{ key = "w", mods = "CMD", action = act.CloseCurrentTab({ confirm = true }) },
 	{ key = "1", mods = "CMD", action = act.ActivateTab(0) },
 	{ key = "2", mods = "CMD", action = act.ActivateTab(1) },
@@ -146,6 +140,20 @@ config.keys = {
 				end
 			end),
 		}),
+	},
+}
+
+-- Mouse: open links with Shift+Click.
+-- TUI apps (e.g. Claude Code) enable mouse reporting, so a plain click is sent
+-- to the app instead of WezTerm. SHIFT is WezTerm's default bypass-mouse-reporting
+-- modifier, so the click reaches WezTerm; this binding then opens the link under
+-- the cursor (or completes/copies a selection if one is active). Shift+drag still
+-- selects text as usual.
+config.mouse_bindings = {
+	{
+		event = { Up = { streak = 1, button = "Left" } },
+		mods = "SHIFT",
+		action = act.CompleteSelectionOrOpenLinkAtMouseCursor("ClipboardAndPrimarySelection"),
 	},
 }
 
