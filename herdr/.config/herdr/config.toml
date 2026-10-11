@@ -17,7 +17,6 @@ delivery = "terminal"
 [ui]
 show_agent_labels_on_pane_borders = true
 agent_panel_sort = "priority"
-hide_tab_bar_when_single_tab = true
 sidebar_width = 30
 accent = "#d4a36a"
 
