@@ -10,15 +10,17 @@ config.initial_rows = 40
 config.initial_cols = 150
 
 -- Font
-config.font = wezterm.font("MesloLGS NF")
-config.font_size = 19
+config.font = wezterm.font("JetBrainsMono Nerd Font")
+config.font_size = 16
+config.line_height = 1.15
+config.window_padding = { left = 14, right = 14, top = 10, bottom = 6 }
 
 -- Colors
 config.color_scheme = "Squirrelsong Dark"
 config.window_frame = {
 	active_titlebar_bg = "#4d3b2e",
 	inactive_titlebar_bg = "#292019",
-	font = wezterm.font("MesloLGS NF"),
+	font = wezterm.font("JetBrainsMono Nerd Font"),
 	font_size = 13,
 }
 
