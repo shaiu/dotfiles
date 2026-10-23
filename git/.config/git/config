@@ -1,6 +1,6 @@
 [user]
 	name = Shai Ungar
-	email = shai.ungar@gmail.com
+	email = shaiungar@gmail.com
 [includeIf "gitdir:~/git/"]
 	path = ~/.gitconfig.work
 [alias]
@@ -26,3 +26,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[init]
+	defaultBranch = main

@@ -177,4 +177,9 @@ config.mouse_bindings = {
 	},
 }
 
+-- Bidirectional text: reorder RTL scripts (Hebrew/Arabic) for correct display.
+-- Without this, WezTerm renders RTL runs in logical order, so they read backwards.
+config.bidi_enabled = true
+config.bidi_direction = 'AutoLeftToRight'
+
 return config
