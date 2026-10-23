@@ -43,3 +43,8 @@ opt.splitbelow = true -- split horizontal window to the bottom
 -- turn off swapfile
 opt.swapfile = false
 
+-- bidirectional text (Hebrew/Arabic)
+-- WezTerm has bidi_enabled, so let the terminal reorder RTL runs and keep
+-- logical order here instead of Neovim trying (and failing) to reorder itself
+opt.termbidi = true
+
