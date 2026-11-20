@@ -26,6 +26,8 @@ plugins=(
 	zsh-completions
 	kubectl
 	kubectx
+	docker-compose
+	golang
 )
 
 HISTTIMEFORMAT="%F %T "
@@ -93,8 +95,8 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 autoload bashcompinit
 bashcompinit
-# Defer argcomplete initialization (slow)
-zsh-defer eval "$(register-python-argcomplete pipx)"
+# Defer argcomplete initialization (slow); only where pipx's argcomplete exists
+(( $+commands[register-python-argcomplete] )) && zsh-defer eval "$(register-python-argcomplete pipx)"
 
 export GIT_HOME=~/git
 
@@ -178,10 +180,6 @@ alias ls="eza --color=always --long --git --no-filesize --icons=always --time-st
 zsh-defer eval "$(thefuck --alias)"
 zsh-defer eval "$(thefuck --alias fk)"
 
-# ---- Zoxide (better cd) ----
-zsh-defer eval "$(zoxide init zsh)"
-zsh-defer alias cd="z"
-
 alias python="python3"
 alias python3="python3"
 
@@ -204,7 +202,23 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # Created by `pipx`
 export PATH="$PATH:$HOME/.local/bin"
 
+# npm global installs
+export PATH=~/.npm-global/bin:$PATH
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
+
+export CLAUDE_CODE_NO_FLICKER=1
+
 # Source machine-local secrets and work-specific config (not in dotfiles repo)
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
-export CLAUDE_CODE_NO_FLICKER=1
+# ---- Zoxide (better cd) ----
+# Must stay at the very end of this file — zoxide warns if anything
+# runs after its init that could disturb the chpwd hook.
+eval "$(zoxide init zsh)"
+# Claude Code's shell snapshot keeps aliases but not the chpwd hook, so
+# cd→z there trips zoxide's doctor warning on every command.
+[[ -z "$CLAUDECODE" ]] && alias cd="z"

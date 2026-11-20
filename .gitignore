@@ -4,3 +4,4 @@
 *.bak
 .env*
 Brewfile.lock.json
+.zcompdump*
