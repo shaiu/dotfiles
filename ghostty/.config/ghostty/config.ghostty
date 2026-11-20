@@ -28,6 +28,10 @@ desktop-notifications = true
 # Ask before closing a tab/split that still has a running process
 # (WezTerm: CloseCurrentTab { confirm = true }).
 confirm-close-surface = true
+# Tab titles come from zsh (_ghostty_folder_title in .zshrc): folder name only,
+# like WezTerm's format-tab-title. Ghostty's own title feature would set the
+# full path, so turn it off; other shell-integration features stay on.
+shell-integration-features = no-title
 
 # --- Keybindings ------------------------------------------------------------
 # Defaults already match WezTerm: Cmd+T new tab, Cmd+W close, Cmd+1..9 go to

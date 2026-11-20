@@ -32,6 +32,9 @@ HISTTIMEFORMAT="%F %T "
 
 FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+# Ghostty: _ghostty_folder_title (below) owns the title, so stop oh-my-zsh's
+# auto-title from overwriting it. Must be set before oh-my-zsh is sourced.
+[[ "$TERM_PROGRAM" == ghostty && -z "$TMUX" ]] && DISABLE_AUTO_TITLE=true
 source $ZSH/oh-my-zsh.sh
 
 # Report current working directory to terminal via OSC 7 (for wezterm tab titles)
@@ -46,6 +49,17 @@ _osc7_cwd() {
 }
 add-zsh-hook chpwd _osc7_cwd
 zsh-defer _osc7_cwd  # report on shell startup too
+
+# Ghostty tab title = current folder name ("~" at home), like the WezTerm
+# format-tab-title handler. Set on every prompt and before every command, so the
+# title stays the folder while a command runs. Apps that set their own title
+# (Claude Code, nvim) still override it until they exit. Needs
+# shell-integration-features = no-title in the Ghostty config.
+if [[ "$TERM_PROGRAM" == ghostty && -z "$TMUX" ]]; then
+  _ghostty_folder_title() { print -Pn '\e]2;%1~\a' }
+  add-zsh-hook precmd _ghostty_folder_title
+  add-zsh-hook preexec _ghostty_folder_title
+fi
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
