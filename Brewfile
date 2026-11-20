@@ -47,6 +47,7 @@ brew "krew"          # kubectl plugin manager
 brew "stern"         # multi-pod log tailing
 
 # Terminal emulator
+cask "ghostty"
 cask "wezterm"
 
 # Window management

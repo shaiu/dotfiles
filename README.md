@@ -20,6 +20,7 @@ cd ~/dotfiles
 | `tmux` | Tmux config with TPM plugins |
 | `nvim` | Neovim config (Lua-based, lazy.nvim) |
 | `vim` | Vim config with vim-plug |
+| `ghostty` | Ghostty terminal emulator |
 | `wezterm` | WezTerm terminal emulator |
 | `herdr` | Herdr agent multiplexer (theme matched to WezTerm) |
 | `aerospace` | AeroSpace tiling window manager |

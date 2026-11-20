@@ -1,0 +1,53 @@
+# Ghostty config — ported from wezterm/.config/wezterm/wezterm.lua
+# Docs: `ghostty +show-config --default --docs`. Reload: Cmd+Shift+,
+
+# --- Window -----------------------------------------------------------------
+# WezTerm used window_decorations = "RESIZE" (no title bar). Ghostty's "hidden"
+# style also hides native tabs, so "tabs" is the closest match that keeps them:
+# tabs sit inside a slim title bar coloured by the theme background.
+macos-titlebar-style = tabs
+window-width = 150
+window-height = 40
+window-padding-x = 14
+window-padding-y = 10,6
+
+# --- Font -------------------------------------------------------------------
+font-family = JetBrainsMono Nerd Font
+font-size = 16
+# WezTerm line_height = 1.15
+adjust-cell-height = 15%
+
+# --- Colors -----------------------------------------------------------------
+# Built into Ghostty (same palette as wezterm/colors/squirrelsong-dark.toml).
+theme = Squirrelsong Dark
+split-divider-color = #453327
+
+# --- Behaviour --------------------------------------------------------------
+# Kitty graphics and OSC 9/777 desktop notifications are on by default.
+desktop-notifications = true
+# Ask before closing a tab/split that still has a running process
+# (WezTerm: CloseCurrentTab { confirm = true }).
+confirm-close-surface = true
+
+# --- Keybindings ------------------------------------------------------------
+# Defaults already match WezTerm: Cmd+T new tab, Cmd+W close, Cmd+1..9 go to
+# tab, Cmd+Shift+[ / ] previous/next tab. Links open with Cmd+click (works
+# inside TUIs like Claude Code too; WezTerm needed Shift+click).
+
+# Move tab left/right (WezTerm: Cmd+Shift+{ / }, which physically collided with
+# Cmd+Shift+[ / ] — moved to Cmd+Alt+Shift+[ / ]).
+keybind = cmd+alt+shift+left_bracket=move_tab:-1
+keybind = cmd+alt+shift+right_bracket=move_tab:1
+
+# Rename tab
+keybind = cmd+shift+e=prompt_tab_title
+
+# Ctrl+Cmd+Alt+4: split into 4 panes, each starting a new tmux session.
+keybind = ctrl+cmd+alt+4=text:tmux new-session\n
+keybind = chain=new_split:right
+keybind = chain=text:tmux new-session\n
+keybind = chain=new_split:down
+keybind = chain=text:tmux new-session\n
+keybind = chain=goto_split:left
+keybind = chain=new_split:down
+keybind = chain=text:tmux new-session\n
