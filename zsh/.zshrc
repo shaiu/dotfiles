@@ -139,7 +139,7 @@ _fzf_compgen_dir() {
   fd --type=d --hidden --exclude .git . "$1"
 }
 
-source ~/fzf-git.sh/fzf-git.sh
+() { source ~/fzf-git.sh/fzf-git.sh }
 
 # --- setup fzf theme ---
 export FZF_DEFAULT_OPTS='--color=fg:-1,fg+:#edd5be,bg:-1,bg+:-1
